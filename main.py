@@ -72,7 +72,32 @@ for model_name, model in models.items():
   print(f"{model_name} cross-validation accuracy: {np.mean(scores):.2f}")
   print("-"*70)
   print(cv_scores)
+
   #RandomForest has high accuracy
   rfc = RandomForestClassifier(random_state=42)
   rfc.fit(X_train_smote, y_train_smote)
   print(y_test.value_counts())
+
+  # evaluate on test data
+y_test_pred = rfc.predict(X_test)
+
+print("Accuracy Score:\n", accuracy_score(y_test, y_test_pred))
+print("Confsuion Matrix:\n", confusion_matrix(y_test, y_test_pred))
+print("Classification Report:\n", classification_report(y_test, y_test_pred))
+
+# save the trained model as a pickle file
+model_data = {"model": rfc, "features_names": X.columns.tolist()}
+
+
+with open("customer_churn_model.pkl", "wb") as f:
+  pickle.dump(model_data, f)
+
+# load the saved model and the feature names
+
+with open("customer_churn_model.pkl", "rb") as f:
+  model_data = pickle.load(f)
+
+loaded_model = model_data["model"]
+feature_names = model_data["features_names"]  
+print(loaded_model)
+print(feature_names)
