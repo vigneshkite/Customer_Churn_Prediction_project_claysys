@@ -49,3 +49,8 @@ y = df["Churn"]
 # split training and test data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 print(y_train.value_counts()) 
+#Synthetic Minority Over-sampling Technique
+smote = SMOTE(random_state=42)
+X_train_smote, y_train_smote = smote.fit_resample(X_train, y_train)
+print(y_train_smote.shape)
+print(y_train_smote.value_counts())
