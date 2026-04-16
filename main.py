@@ -92,7 +92,7 @@ model_data = {"model": rfc, "features_names": X.columns.tolist()}
 with open("customer_churn_model.pkl", "wb") as f:
   pickle.dump(model_data, f)
 
-# load the saved model and the feature names
+# load the saved model and the feature names 
 
 with open("customer_churn_model.pkl", "rb") as f:
   model_data = pickle.load(f)
@@ -101,3 +101,48 @@ loaded_model = model_data["model"]
 feature_names = model_data["features_names"]  
 print(loaded_model)
 print(feature_names)
+
+#inputs 
+
+input_data = {
+    'gender': 'Female',
+    'SeniorCitizen': 0,
+    'Partner': 'Yes',
+    'Dependents': 'No',
+    'tenure': 1,
+    'PhoneService': 'No',
+    'MultipleLines': 'No phone service',
+    'InternetService': 'DSL',
+    'OnlineSecurity': 'No',
+    'OnlineBackup': 'Yes',
+    'DeviceProtection': 'No',
+    'TechSupport': 'No',
+    'StreamingTV': 'No',
+    'StreamingMovies': 'No',
+    'Contract': 'Month-to-month',
+    'PaperlessBilling': 'Yes',
+    'PaymentMethod': 'Electronic check',
+    'MonthlyCharges': 29.85,
+    'TotalCharges': 29.85
+}
+
+
+input_data_df = pd.DataFrame([input_data])
+
+with open("encoders.pkl", "rb") as f:
+  encoders = pickle.load(f)
+
+
+# encode categorical featires using teh saved encoders
+for column, encoder in encoders.items():
+  input_data_df[column] = encoder.transform(input_data_df[column])
+
+# make a prediction
+prediction = loaded_model.predict(input_data_df)
+pred_prob = loaded_model.predict_proba(input_data_df)
+
+print(prediction)
+
+# results
+print(f"Prediction: {'Churn' if prediction[0] == 1 else 'No Churn'}")
+print(f"Prediciton Probability: {pred_prob}")
