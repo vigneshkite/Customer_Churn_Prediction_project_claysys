@@ -10,3 +10,5 @@ from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import pickle
+
+df = pd.read_csv("C:\Users\lvign\OneDrive\Desktop\Customer Churn Prediction\Customer_Churn_Prediction_project_claysys\WA_Fn-UseC_-Telco-Customer-Churn.csv")
