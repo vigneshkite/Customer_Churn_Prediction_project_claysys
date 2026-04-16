@@ -12,3 +12,10 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 import pickle
 
 df = pd.read_csv("C:\\Users\\lvign\\OneDrive\\Desktop\\Customer Churn Prediction\\Customer_Churn_Prediction_project_claysys\\WA_Fn-UseC_-Telco-Customer-Churn.csv")
+
+print(df.shape)
+
+print(df.head())
+pd.set_option("display.max_columns", None)
+print(df.head(2))
+print(df.info())
