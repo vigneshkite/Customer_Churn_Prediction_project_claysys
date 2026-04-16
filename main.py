@@ -21,3 +21,8 @@ print(df.head(2))
 print(df.info())
 df = df.drop(columns=["customerID"])
 print(df.head(2))
+df[df["TotalCharges"]==" "]
+len(df[df["TotalCharges"]==" "])
+df["TotalCharges"] = df["TotalCharges"].replace({" ": "0.0"})
+df["TotalCharges"] = df["TotalCharges"].astype(float)
+print(df.info())
