@@ -54,3 +54,25 @@ smote = SMOTE(random_state=42)
 X_train_smote, y_train_smote = smote.fit_resample(X_train, y_train)
 print(y_train_smote.shape)
 print(y_train_smote.value_counts())
+#Model Training
+# dictionary of models
+models = {
+    "Decision Tree": DecisionTreeClassifier(random_state=42),
+    "Random Forest": RandomForestClassifier(random_state=42),
+    "XGBoost": XGBClassifier(random_state=42)
+}
+# dictionary to store the cross validation results
+cv_scores = {}
+
+# perform 5-fold cross validation for each model
+for model_name, model in models.items():
+  print(f"Training {model_name} with default parameters")
+  scores = cross_val_score(model, X_train_smote, y_train_smote, cv=5, scoring="accuracy")
+  cv_scores[model_name] = scores
+  print(f"{model_name} cross-validation accuracy: {np.mean(scores):.2f}")
+  print("-"*70)
+  print(cv_scores)
+  #RandomForest has high accuracy
+  rfc = RandomForestClassifier(random_state=42)
+  rfc.fit(X_train_smote, y_train_smote)
+  print(y_test.value_counts())
