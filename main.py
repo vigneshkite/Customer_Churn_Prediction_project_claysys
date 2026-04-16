@@ -21,6 +21,7 @@ print(df.head(2))
 print(df.info())
 df = df.drop(columns=["customerID"])
 print(df.head(2))
+# convert of total charges of string to float
 df[df["TotalCharges"]==" "]
 len(df[df["TotalCharges"]==" "])
 df["TotalCharges"] = df["TotalCharges"].replace({" ": "0.0"})
@@ -28,5 +29,16 @@ df["TotalCharges"] = df["TotalCharges"].astype(float)
 print(df.info())
 df["Churn"] = df["Churn"].replace({"Yes": 1, "No": 0})
 print(df.head(2))
+#check of objects and selecting of object
 object_columns = df.select_dtypes(include="object").columns
 print(object_columns)
+# initialize dictionary to save the encoders
+encoders = {}
+# apply label encoding and store the encoders
+for column in object_columns:
+  label_encoder = LabelEncoder()
+  df[column] = label_encoder.fit_transform(df[column])
+  encoders[column] = label_encoder
+# save the encoders to a pickle file
+with open("encoders.pkl", "wb") as f:
+  pickle.dump(encoders, f)
