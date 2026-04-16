@@ -29,7 +29,7 @@ df["TotalCharges"] = df["TotalCharges"].astype(float)
 print(df.info())
 df["Churn"] = df["Churn"].replace({"Yes": 1, "No": 0})
 print(df.head(2))
-#check of objects and selecting of object
+#check of objects and selecting of object in dataset
 object_columns = df.select_dtypes(include="object").columns
 print(object_columns)
 # initialize dictionary to save the encoders
@@ -39,6 +39,13 @@ for column in object_columns:
   label_encoder = LabelEncoder()
   df[column] = label_encoder.fit_transform(df[column])
   encoders[column] = label_encoder
-# save the encoders to a pickle file
+# save the encoders to a pickle file 
 with open("encoders.pkl", "wb") as f:
   pickle.dump(encoders, f)
+
+# splitting the features and target
+X = df.drop(columns=["Churn"])
+y = df["Churn"] 
+# split training and test data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+print(y_train.value_counts()) 
