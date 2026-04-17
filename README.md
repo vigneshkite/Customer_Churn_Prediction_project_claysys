@@ -2,37 +2,42 @@
 
 <h2>Project Description</h2>
 
-This project focuses on predicting customer churn using machine learning techniques. Customer churn refers to customers who stop using a company's service. By analyzing customer data, this model helps businesses identify customers who are likely to leave, enabling better retention strategies.
+This project focuses on predicting customer churn using machine learning techniques and also includes an interactive web application built with Streamlit. Customer churn refers to customers who stop using a company's service. By analyzing customer data, this model helps businesses identify customers who are likely to leave, enabling better retention strategies.
 The project uses the Telco Customer Churn dataset and applies data preprocessing, feature encoding, handling class imbalance, and multiple machine learning models to achieve accurate predictions.
 
 
 <h2>Setup Instructions</h2>
 
- <h3>1️ Clone the Repository</h3>
+<h3>1 Clone the Repository</h3>
 
 ```bash
 git clone https://github.com/vigneshkite/Customer_Churn_Prediction_project_claysys.git
 cd Customer_Churn_Prediction_project_claysys
 ```
 
- <h3>2️ Install Required Libraries</h3>
+<h3>2 Install Required Libraries</h3>
 
 Make sure Python is installed (recommended: Python 3.8+)
 
 ```bash
-pip install numpy pandas matplotlib seaborn scikit-learn imbalanced-learn xgboost
+pip install numpy pandas matplotlib seaborn scikit-learn imbalanced-learn xgboost streamlit
 ```
 
+<h3>3 Usage Instructions</h3>
 
- <h3> 3 Usage Instructions</h3>
+Run the Streamlit application:
 
-Run the main Python script:
+```bash
+streamlit run app5.py
+```
+
+OR run the main Python script:
 
 ```bash
 python main.py
 ```
 
-The script will:
+The application will:
 
 * Load and preprocess the dataset
 * Encode categorical variables
@@ -40,10 +45,10 @@ The script will:
 * Train multiple models
 * Evaluate performance
 * Save the best model and encoders
-* Predict churn for sample input data
+* Predict churn for input data using Streamlit UI
 
 
-<h2> Dependencies / Prerequisites</h2>
+<h2>Dependencies / Prerequisites</h2>
 
 * Python 3.x
 * Libraries:
@@ -55,28 +60,29 @@ The script will:
   * scikit-learn
   * imbalanced-learn (SMOTE)
   * xgboost
+  * streamlit
   * pickle (built-in)
 
 
 <h2>Solution Approach</h2>
 
-<h3> 1. Data Preprocessing</h3>
+<h3>1. Data Preprocessing</h3>
 
 * Removed unnecessary column (`customerID`)
 * Converted `TotalCharges` to numeric
 * Handled missing values
 * Converted target variable (`Churn`) into binary (0/1)
 
- <h3>2. Feature Engineering</h3>
+<h3>2. Feature Engineering</h3>
 
-* Applied **Label Encoding** to categorical variables
+* Applied Label Encoding to categorical variables
 * Saved encoders using pickle for future predictions
 
- <h3>3. Handling Imbalanced Data</h3>
+<h3>3. Handling Imbalanced Data</h3>
 
 * Used SMOTE (Synthetic Minority Over-sampling Technique) to balance classes
 
- <h3>4. Model Training</h3>
+<h3>4. Model Training</h3>
 
 Trained multiple models:
 
@@ -86,26 +92,33 @@ Trained multiple models:
 
 Used 5-fold Cross Validation to compare performance.
 
-<h3> 5. Model Selection</h3>
+<h3>5. Model Selection</h3>
 
 * Selected Random Forest Classifier based on best accuracy
 
- <h3>6. Evaluation Metrics</h3>
+<h3>6. Evaluation Metrics</h3>
 
 * Accuracy Score
 * Confusion Matrix
 * Classification Report
 
- <h3>7. Model Saving</h3>
+<h3>7. Model Saving</h3>
 
 * Saved trained model (`customer_churn_model.pkl`)
 * Saved encoders (`encoders.pkl`)
 
- <h3>8. Prediction</h3>
+<h3>8. Prediction</h3>
 
 * Accepts new customer data
 * Applies same preprocessing
 * Predicts churn and probability
+
+<h3>9. Deployment (Streamlit)</h3>
+
+* Interactive user interface
+* Real-time prediction
+* Probability visualization
+* Risk level classification
 
 
 <h2>Regular Commits</h2>
@@ -148,6 +161,7 @@ This project follows a structured and incremental development process. Below is 
 * Save the trained model as a pickle file
 * Load the saved model and feature names
 * Prediction using input data
+* Streamlit UI deployment
 
 Each commit represents a meaningful step in the machine learning pipeline, ensuring:
 
@@ -155,12 +169,14 @@ Each commit represents a meaningful step in the machine learning pipeline, ensur
 * Easy debugging
 * Clear project understanding
 
+
 <h2>Future Improvements</h2>
 
 * Hyperparameter tuning
-* Deploy using Streamlit / Flask
+* Deploy using Streamlit Cloud / AWS
 * Add Power BI dashboard for visualization
 * Use advanced models like LightGBM
+
 
 <h2>Author</h2>
 
@@ -171,6 +187,4 @@ GitHub: https://github.com/vigneshkite
 
 <h2>Dataset</h2>
 
-Telco Customer Churn Dataset
-
-
+Telco Customer Churn Dataset  
