@@ -1,5 +1,11 @@
 <h1>Customer Churn Prediction Project</h1> 
 
+<p><b>Live Demo:</b> 
+<a href="https://customerchurnpredictionprojectclaysys-cl52xw7anjdxacyfcrscrq.streamlit.app/" target="_blank">
+Customer Churn Prediction App
+</a>
+</p>
+
 <h2>Project Description</h2>
 
 This project focuses on predicting customer churn using machine learning techniques and also includes an interactive web application built with Streamlit. Customer churn refers to customers who stop using a company's service. By analyzing customer data, this model helps businesses identify customers who are likely to leave, enabling better retention strategies.
@@ -167,7 +173,6 @@ Each commit represents a meaningful step in the machine learning pipeline, ensur
 <h2>Future Improvements</h2>
 
 * Hyperparameter tuning
-* Deploy using Streamlit Cloud / AWS
 * Add Power BI dashboard for visualization
 * Use advanced models like LightGBM
 
