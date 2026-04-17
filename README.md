@@ -1,22 +1,21 @@
-📊 Customer Churn Prediction Project
+<h1>Customer Churn Prediction Project<h1> 
 
-📌 Project Description
+Project Description
 
 This project focuses on predicting customer churn using machine learning techniques. Customer churn refers to customers who stop using a company's service. By analyzing customer data, this model helps businesses identify customers who are likely to leave, enabling better retention strategies.
-
 The project uses the Telco Customer Churn dataset and applies data preprocessing, feature encoding, handling class imbalance, and multiple machine learning models to achieve accurate predictions.
 
 
- ⚙️ Setup Instructions
+Setup Instructions
 
- 1️⃣ Clone the Repository
+ 1️ Clone the Repository
 
 ```bash
 git clone https://github.com/vigneshkite/Customer_Churn_Prediction_project_claysys.git
 cd Customer_Churn_Prediction_project_claysys
 ```
 
- 2️⃣ Install Required Libraries
+ 2️ Install Required Libraries
 
 Make sure Python is installed (recommended: Python 3.8+)
 
@@ -25,7 +24,7 @@ pip install numpy pandas matplotlib seaborn scikit-learn imbalanced-learn xgboos
 ```
 
 
- ▶️ Usage Instructions
+  3 Usage Instructions
 
 Run the main Python script:
 
@@ -44,7 +43,7 @@ The script will:
 * Predict churn for sample input data
 
 
- 📦 Dependencies / Prerequisites
+ Dependencies / Prerequisites
 
 * Python 3.x
 * Libraries:
@@ -59,7 +58,7 @@ The script will:
   * pickle (built-in)
 
 
- 🧠 Solution Approach
+Solution Approach
 
  1. Data Preprocessing
 
@@ -75,7 +74,7 @@ The script will:
 
  3. Handling Imbalanced Data
 
-* Used **SMOTE (Synthetic Minority Over-sampling Technique)** to balance classes
+* Used SMOTE (Synthetic Minority Over-sampling Technique) to balance classes
 
  4. Model Training
 
@@ -85,11 +84,11 @@ Trained multiple models:
 * Random Forest
 * XGBoost
 
-Used **5-fold Cross Validation** to compare performance.
+Used 5-fold Cross Validation to compare performance.
 
  5. Model Selection
 
-* Selected **Random Forest Classifier** based on best accuracy
+* Selected Random Forest Classifier based on best accuracy
 
  6. Evaluation Metrics
 
@@ -109,23 +108,23 @@ Used **5-fold Cross Validation** to compare performance.
 * Predicts churn and probability
 
 
- 🔄 Regular Commits
+Regular Commits
 
 This project follows a structured and incremental development process. Below is the commit history representing each step of the pipeline:
 
- 📌 Project Initialization
+Project Initialization
 
 * Add files via upload
 * Main file created
 * Import of modules
 
- 📊 Data Loading & Exploration
+Data Loading & Exploration
 
 * Load CSV to code
 * Error on load data
 * Data analysis and visualization
 
- 🧹 Data Preprocessing
+Data Preprocessing
 
 * Remove customer ID
 * Convert string of TotalCharges into float
@@ -134,16 +133,16 @@ This project follows a structured and incremental development process. Below is 
 * Apply label encoding and store encoders
 * Save encoders to a pickle file
 
- 🔀 Data Splitting & Balancing
+Data Splitting & Balancing
 
 * Split training and test data
 * Synthetic Minority Over-sampling Technique (SMOTE)
 
- 🤖 Model Building
+Model Building
 
 * Model training and cross-validation results
 
- 📈 Evaluation & Deployment
+Evaluation & Deployment
 
 * Evaluate on test data
 * Save the trained model as a pickle file
@@ -156,26 +155,22 @@ Each commit represents a meaningful step in the machine learning pipeline, ensur
 * Easy debugging
 * Clear project understanding
 
-
-
- 📈 Future Improvements
+Future Improvements
 
 * Hyperparameter tuning
 * Deploy using Streamlit / Flask
 * Add Power BI dashboard for visualization
 * Use advanced models like LightGBM
 
+Author
 
- 👨‍💻 Author
-
-**Vignesh L**
+Vignesh L
 
 GitHub: https://github.com/vigneshkite
 
 
-## 📌 Dataset
+Dataset
 
 Telco Customer Churn Dataset
 
 
-⭐ If you found this project useful, consider giving it a star!
