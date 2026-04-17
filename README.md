@@ -28,7 +28,7 @@ pip install numpy pandas matplotlib seaborn scikit-learn imbalanced-learn xgboos
 Run the Streamlit application:
 
 ```bash
-streamlit run app5.py
+streamlit run app.py
 ```
 
 OR run the main Python script:
