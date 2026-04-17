@@ -31,12 +31,6 @@ Run the Streamlit application:
 streamlit run app.py
 ```
 
-OR run the main Python script:
-
-```bash
-python main.py
-```
-
 The application will:
 
 * Load and preprocess the dataset
