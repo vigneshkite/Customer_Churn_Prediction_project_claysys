@@ -1,21 +1,21 @@
-<h1>Customer Churn Prediction Project<h1> 
+<h1>Customer Churn Prediction Project</h1> 
 
-Project Description
+<h2>Project Description</h2>
 
 This project focuses on predicting customer churn using machine learning techniques. Customer churn refers to customers who stop using a company's service. By analyzing customer data, this model helps businesses identify customers who are likely to leave, enabling better retention strategies.
 The project uses the Telco Customer Churn dataset and applies data preprocessing, feature encoding, handling class imbalance, and multiple machine learning models to achieve accurate predictions.
 
 
-Setup Instructions
+<h2>Setup Instructions</h2>
 
- 1️ Clone the Repository
+ <h3>1️ Clone the Repository</h3>
 
 ```bash
 git clone https://github.com/vigneshkite/Customer_Churn_Prediction_project_claysys.git
 cd Customer_Churn_Prediction_project_claysys
 ```
 
- 2️ Install Required Libraries
+ <h3>2️ Install Required Libraries</h3>
 
 Make sure Python is installed (recommended: Python 3.8+)
 
@@ -24,7 +24,7 @@ pip install numpy pandas matplotlib seaborn scikit-learn imbalanced-learn xgboos
 ```
 
 
-  3 Usage Instructions
+ <h3> 3 Usage Instructions</h3>
 
 Run the main Python script:
 
@@ -43,7 +43,7 @@ The script will:
 * Predict churn for sample input data
 
 
- Dependencies / Prerequisites
+<h2> Dependencies / Prerequisites</h2>
 
 * Python 3.x
 * Libraries:
@@ -58,25 +58,25 @@ The script will:
   * pickle (built-in)
 
 
-Solution Approach
+<h2>Solution Approach</h2>
 
- 1. Data Preprocessing
+<h3> 1. Data Preprocessing</h3>
 
 * Removed unnecessary column (`customerID`)
 * Converted `TotalCharges` to numeric
 * Handled missing values
 * Converted target variable (`Churn`) into binary (0/1)
 
- 2. Feature Engineering
+ <h3>2. Feature Engineering</h3>
 
 * Applied **Label Encoding** to categorical variables
 * Saved encoders using pickle for future predictions
 
- 3. Handling Imbalanced Data
+ <h3>3. Handling Imbalanced Data</h3>
 
 * Used SMOTE (Synthetic Minority Over-sampling Technique) to balance classes
 
- 4. Model Training
+ <h3>4. Model Training</h3>
 
 Trained multiple models:
 
@@ -86,45 +86,45 @@ Trained multiple models:
 
 Used 5-fold Cross Validation to compare performance.
 
- 5. Model Selection
+<h3> 5. Model Selection</h3>
 
 * Selected Random Forest Classifier based on best accuracy
 
- 6. Evaluation Metrics
+ <h3>6. Evaluation Metrics</h3>
 
 * Accuracy Score
 * Confusion Matrix
 * Classification Report
 
- 7. Model Saving
+ <h3>7. Model Saving</h3>
 
 * Saved trained model (`customer_churn_model.pkl`)
 * Saved encoders (`encoders.pkl`)
 
- 8. Prediction
+ <h3>8. Prediction</h3>
 
 * Accepts new customer data
 * Applies same preprocessing
 * Predicts churn and probability
 
 
-Regular Commits
+<h2>Regular Commits</h2>
 
 This project follows a structured and incremental development process. Below is the commit history representing each step of the pipeline:
 
-Project Initialization
+<h3>Project Initialization</h3>
 
 * Add files via upload
 * Main file created
 * Import of modules
 
-Data Loading & Exploration
+<h3>Data Loading & Exploration</h3>
 
 * Load CSV to code
 * Error on load data
 * Data analysis and visualization
 
-Data Preprocessing
+<h3>Data Preprocessing</h3>
 
 * Remove customer ID
 * Convert string of TotalCharges into float
@@ -133,16 +133,16 @@ Data Preprocessing
 * Apply label encoding and store encoders
 * Save encoders to a pickle file
 
-Data Splitting & Balancing
+<h3>Data Splitting & Balancing</h3>
 
 * Split training and test data
 * Synthetic Minority Over-sampling Technique (SMOTE)
 
-Model Building
+<h3>Model Building</h3>
 
 * Model training and cross-validation results
 
-Evaluation & Deployment
+<h2>Evaluation & Deployment</h2>
 
 * Evaluate on test data
 * Save the trained model as a pickle file
@@ -155,21 +155,21 @@ Each commit represents a meaningful step in the machine learning pipeline, ensur
 * Easy debugging
 * Clear project understanding
 
-Future Improvements
+<h2>Future Improvements</h2>
 
 * Hyperparameter tuning
 * Deploy using Streamlit / Flask
 * Add Power BI dashboard for visualization
 * Use advanced models like LightGBM
 
-Author
+<h2>Author</h2>
 
 Vignesh L
 
 GitHub: https://github.com/vigneshkite
 
 
-Dataset
+<h2>Dataset</h2>
 
 Telco Customer Churn Dataset
 
